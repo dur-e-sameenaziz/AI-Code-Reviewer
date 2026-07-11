@@ -40,7 +40,7 @@ python manage.py test
 
 ## Screenshots
 
-Smart Code Reviewer screenshot
+![Smart Code Reviewer screenshot](screenshots/AI-Code-Reviewer.png)
 
 ## 100-Word Summary
 
