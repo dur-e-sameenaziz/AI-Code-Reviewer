@@ -1,0 +1,131 @@
+body {
+    background: #f4f4f4;
+    color: #222;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    margin: 30px auto;
+    max-width: 900px;
+    padding: 25px;
+}
+
+nav {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+}
+
+nav a {
+    color: #2454a6;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+}
+
+textarea {
+    font-family: monospace;
+    min-height: 250px;
+}
+
+button {
+    background: #2454a6;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    padding: 10px 18px;
+}
+
+.message,
+.errorlist {
+    color: #b00020;
+}
+
+pre {
+    background: #eee;
+    overflow: auto;
+    padding: 15px;
+}
+
+.review-header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+}
+
+.score-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.score-card {
+    border: 1px solid #ddd;
+    padding: 14px;
+}
+
+.score-card span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.muted {
+    color: #666;
+}
+
+.risk-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.risk-list li {
+    margin-bottom: 8px;
+}
+
+.severity {
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+    min-width: 58px;
+    padding: 3px 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.severity-low {
+    background: #347d39;
+}
+
+.severity-medium {
+    background: #9a6700;
+}
+
+.severity-high {
+    background: #cf222e;
+}
+
+@media (max-width: 700px) {
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+}

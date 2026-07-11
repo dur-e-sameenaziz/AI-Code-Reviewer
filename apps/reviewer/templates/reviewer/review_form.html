@@ -1,0 +1,74 @@
+{% extends "reviewer/base.html" %}
+
+{% block content %}
+<h1>Smart Code Reviewer</h1>
+<p>Paste a short snippet and get a practical review for readability, structure, and maintainability.</p>
+
+{% if error %}
+    <p class="message">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Review Code</button>
+</form>
+
+{% if review %}
+    <section class="review-header">
+        <h2>{{ review.verdict }}</h2>
+        <p><strong>Overall Score:</strong> {{ review.overall_score }}/10</p>
+        <p>{{ review.summary }}</p>
+    </section>
+
+    <h3>Scores</h3>
+    <div class="score-grid">
+        <article class="score-card">
+            <strong>Readability</strong>
+            <span>{{ review.readability.score }}/10</span>
+            <p>{{ review.readability.feedback }}</p>
+        </article>
+        <article class="score-card">
+            <strong>Structure</strong>
+            <span>{{ review.structure.score }}/10</span>
+            <p>{{ review.structure.feedback }}</p>
+        </article>
+        <article class="score-card">
+            <strong>Maintainability</strong>
+            <span>{{ review.maintainability.score }}/10</span>
+            <p>{{ review.maintainability.feedback }}</p>
+        </article>
+    </div>
+
+    <h3>Improvements</h3>
+    <ol>
+        {% for item in review.improvements %}
+            <li>
+                <strong>{{ item.title }}</strong><br>
+                <span class="muted">{{ item.reason }}</span><br>
+                {{ item.suggestion }}
+            </li>
+        {% empty %}
+            <li>No high-value improvements needed.</li>
+        {% endfor %}
+    </ol>
+
+    <h3>Risks</h3>
+    <ul class="risk-list">
+        {% for risk in review.risks %}
+            <li>
+                <span class="severity severity-{{ risk.severity }}">{{ risk.severity }}</span>
+                {{ risk.risk }}
+            </li>
+        {% empty %}
+            <li>No notable risks found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Positive Note</h3>
+    <p>{{ review.positive_note }}</p>
+
+    <h3>Markdown Version</h3>
+    <textarea readonly>{{ markdown_review }}</textarea>
+{% endif %}
+{% endblock %}
