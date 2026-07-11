@@ -4,6 +4,10 @@ This is a simple Django app for Challenge 1: Smart Code Reviewer.
 
 A user can paste a short code snippet, pick a language, and get a quick review focused on readability, structure, and maintainability before a human reviewer sees it.
 
+## 100-Word Summary
+
+I built Smart Code Reviewer as a small Django prototype, even though my main experience is in Ruby on Rails. I picked Django deliberately as I wanted to stretch slightly outside my comfort zone while still leaning on backend concepts I already understand. The app reviews short code snippets for readability, structure, and maintainability before a human reviewer sees them. I kept the scope narrow on purpose: one form, one result, one clear piece of feedback. It was interesting seeing how much of my Rails intuition carried over to Django. It's a small project, but it reflects how I like to learn; by building.
+
 ## Features
 
 - Code review form
@@ -41,10 +45,6 @@ python manage.py test
 ## Screenshots
 
 ![Smart Code Reviewer screenshot](screenshots/AI-Code-Reviewer.png)
-
-## 100-Word Summary
-
-I built Smart Code Reviewer as a small Django prototype, even though my main experience is in Ruby on Rails. I picked Django deliberately as I wanted to stretch slightly outside my comfort zone while still leaning on backend concepts I already understand. The app reviews short code snippets for readability, structure, and maintainability before a human reviewer sees them. I kept the scope narrow on purpose: one form, one result, one clear piece of feedback. It was interesting seeing how much of my Rails intuition carried over to Django. It's a small project, but it reflects how I like to learn; by building.
 
 ## Notes
 
